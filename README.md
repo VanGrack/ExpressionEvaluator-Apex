@@ -2,7 +2,7 @@ Apex code for boolean expression evaluation
 
 # Usage:
 ```java
-public BooleanEvaluate(String expression, Boolean[] values){ ... }
+ExpressionEvaluator.evaluateExpression(String expression, Boolean[] values){ ... });
 ```
 So, the parameter 'expression' must be using ordinal numbers related to the parameter 'values'  (Examples below)
 
@@ -11,7 +11,7 @@ So, the parameter 'expression' must be using ordinal numbers related to the para
 List<Boolean> values = new List<Boolean>{
 true, false, true, true, false, true, true, true
 };
+String expression = '1 && ( ( 2 || 3 ) && 6 ) && ( 4 && 5 || ( 7 && 8 ) )';
 
-BooleanEvaluate boolEval = new BooleanEvaluate('1 && ( ( 2 || 3 ) && 6 ) && ( 4 && 5 || ( 7 && 8 ) )', values);
-boolEval.evaluate();
+ExpressionEvaluator.evaluateExpression();
 ```
