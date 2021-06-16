@@ -13,5 +13,5 @@ true, false, true, true, false, true, true, true
 };
 String expression = '1 && ( ( 2 || 3 ) && 6 ) && ( 4 && 5 || ( 7 && 8 ) )';
 
-ExpressionEvaluator.evaluateExpression();
+ExpressionEvaluator.evaluateExpression(expression, values);
 ```
