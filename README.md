@@ -1,15 +1,12 @@
 Apex code for boolean expression evaluation
 
 # Usage:
-### First:
 ```java
 public BooleanEvaluate(String expression, Boolean[] values){ ... }
 ```
 So, the parameter 'expression' must be using ordinal numbers related to the parameter 'values'  (Examples below)
 
 # EXAMPLES
-### First:
-
 ```java
 List<Boolean> values = new List<Boolean>{
 true, false, true, true, false, true, true, true
