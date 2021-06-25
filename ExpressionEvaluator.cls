@@ -58,22 +58,34 @@ public with sharing class ExpressionEvaluator {
         return result;
     }
 
-    public static Boolean evaluate(String expression) {
-        String[] tokens = expression.split(' ');
-        switch on tokens[1] {
+    public static Boolean evaluate(Expression expression) {
+        switch on expression.operator {
             when '>' {
-                return Double.valueOf(tokens[0]) > Double.valueOf(tokens[2]);
+                return Double.valueOf(expression.arg1) > Double.valueOf(expression.arg2);
             } when '<' {
-                return Double.valueOf(tokens[0]) < Double.valueOf(tokens[2]);
+                return Double.valueOf(expression.arg1) < Double.valueOf(expression.arg2);
             } when '>=' {
-                return Double.valueOf(tokens[0]) >= Double.valueOf(tokens[2]);
+                return Double.valueOf(expression.arg1) >= Double.valueOf(expression.arg2);
             } when '<=' {
-                return Double.valueOf(tokens[0]) <= Double.valueOf(tokens[2]);
+                return Double.valueOf(expression.arg1) <= Double.valueOf(expression.arg2);
             } when '=' {
-                return tokens[0] == tokens[2];
+                return expression.arg1 == expression.arg2;
             }
         }
 
         return false;
+    }
+
+
+    public class Expression {
+        Object arg1 { get; private set; }
+        Object arg2 { get; private set; }
+        String operator { get; private set; }
+
+        public Expression(Object arg1, Object arg2, String operator) {
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.operator = operator;
+        }
     }
 }
